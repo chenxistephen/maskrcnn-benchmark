@@ -7,6 +7,14 @@ import os
 class DatasetCatalog(object):
     DATA_DIR = "datasets"
     DATASETS = {
+        "FashionV2_train": {
+            "img_dir": "/media/data/chnxi/FashionV2/Images",
+            "ann_file": "/media/data/chnxi/FashionV2/json_annotations/train_annotations.json"
+        },
+        "FashionV2_val": {
+            "img_dir": "/media/data/chnxi/FashionV2/Images",
+            "ann_file": "/media/data/chnxi/FashionV2/json_annotations/val_annotations.json"
+        },
         "coco_2017_train": {
             "img_dir": "coco/train2017",
             "ann_file": "coco/annotations/instances_train2017.json"
@@ -108,7 +116,7 @@ class DatasetCatalog(object):
 
     @staticmethod
     def get(name):
-        if "coco" in name:
+        if "coco" in name or "Fashion" in name:
             data_dir = DatasetCatalog.DATA_DIR
             attrs = DatasetCatalog.DATASETS[name]
             args = dict(
