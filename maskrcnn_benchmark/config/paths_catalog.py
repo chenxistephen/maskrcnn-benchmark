@@ -3,11 +3,23 @@
 
 import os
 
-PLATFORM_DATA_DIR='/data/users/chnxi/'
+PLATFORM_DATA_DIR='/ssddata-multimedia/chnxi/'
 
 class DatasetCatalog(object):
     DATA_DIR = "datasets"
     DATASETS = {
+        "GOD_VisualIntent_train": {
+            "img_dir": PLATFORM_DATA_DIR + "VisualIntentV3/Images/",
+            "ann_file":PLATFORM_DATA_DIR + "VisualIntentV3/json_annotations/GOD_VisualIntent_train_20191017.json"
+        },
+        "GOD_O365_Open800k_train": {
+            "img_dir": PLATFORM_DATA_DIR,
+            "ann_file":PLATFORM_DATA_DIR + "GOD/json_annotations/GOD_Open800k_O365_20191017_train.json"
+        },
+        "GOD_OpenImage_val": {
+            "img_dir": PLATFORM_DATA_DIR + "OpenImage/validation_images",
+            "ann_file":PLATFORM_DATA_DIR + "GOD/json_annotations/val_20191017/OpenImage_val_annotations.json"
+        },
         "FashionV2_train": {
             "img_dir": PLATFORM_DATA_DIR + "FashionV2/Images",
             "ann_file":PLATFORM_DATA_DIR + "FashionV2/json_annotations/train_annotations.json"
@@ -117,7 +129,7 @@ class DatasetCatalog(object):
 
     @staticmethod
     def get(name):
-        if "coco" in name or "Fashion" in name:
+        if "coco" in name or "Fashion" in name or "GOD" in name:
             data_dir = DatasetCatalog.DATA_DIR
             attrs = DatasetCatalog.DATASETS[name]
             args = dict(
