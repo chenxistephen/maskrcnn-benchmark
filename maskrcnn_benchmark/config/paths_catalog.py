@@ -8,6 +8,9 @@ PLATFORM_DATA_DIR='/ssddata-multimedia/chnxi/'
 class DatasetCatalog(object):
     DATA_DIR = "datasets"
     DATASETS = {
+        ###################################################################################
+        ### GOD Training Sets
+        ###################################################################################
         "GOD_VisualIntent_train": {
             "img_dir": PLATFORM_DATA_DIR + "VisualIntentV3/Images/",
             "ann_file":PLATFORM_DATA_DIR + "VisualIntentV3/json_annotations/GOD_VisualIntent_train_20191017.json"
@@ -16,10 +19,30 @@ class DatasetCatalog(object):
             "img_dir": PLATFORM_DATA_DIR,
             "ann_file":PLATFORM_DATA_DIR + "GOD/json_annotations/GOD_Open800k_O365_20191017_train.json"
         },
+        ###################################################################################
+        ### GOD Validation Sets
+        ###################################################################################
         "GOD_OpenImage_val": {
             "img_dir": PLATFORM_DATA_DIR + "OpenImage/validation_images",
-            "ann_file":PLATFORM_DATA_DIR + "GOD/json_annotations/val_20191017/OpenImage_val_annotations.json"
+            "ann_file":PLATFORM_DATA_DIR + "GOD/json_annotations/val_20191017/GOD_OpenImage_val_annotations.json"
         },
+        "GOD_FashionV2_val": {
+            "img_dir": PLATFORM_DATA_DIR + "FashionV2/Images",
+            "ann_file":PLATFORM_DATA_DIR + "GOD/json_annotations/val_20191017/GOD_FashionV2_val_annotations.json"
+        },
+        "GOD_furniture_val": {
+            "img_dir": PLATFORM_DATA_DIR + "HomeFurniture/Images",
+            "ann_file":PLATFORM_DATA_DIR + "GOD/json_annotations/val_20191017/GOD_HomeFurniture_val_annotations.json"
+        },
+        "GOD_Object365_val": {
+            "img_dir": PLATFORM_DATA_DIR + "Object365/val",
+            "ann_file":PLATFORM_DATA_DIR + "GOD/json_annotations/val_20191017/GOD_Object365_val_annotations.json"
+        },
+        "GOD_coco_2014_minival": {
+            "img_dir": PLATFORM_DATA_DIR + "coco/val2014",
+            "ann_file":PLATFORM_DATA_DIR + "GOD/json_annotations/val_20191017/GOD_COCO_91_val_annotations.json"
+        },  
+        ###################################################################################
         "FashionV2_train": {
             "img_dir": PLATFORM_DATA_DIR + "FashionV2/Images",
             "ann_file":PLATFORM_DATA_DIR + "FashionV2/json_annotations/train_annotations.json"
